@@ -12,5 +12,5 @@ EXPOSE 4000
 #CMD [ "node", "index.js" ]
 
 FROM scratch
-COPY --from=build /usr/src/app
+COPY --from=build /usr/src/app /usr/src/app
 CMD [ "node", "index.js" ]
