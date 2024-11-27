@@ -11,6 +11,6 @@ COPY . .
 EXPOSE 4000
 #CMD [ "node", "index.js" ]
 
-FROM scratch
+FROM gcr.io/distroless/nodejs22-debian12
 COPY --from=build /usr/src/app /usr/src/app
 CMD [ "node", "index.js" ]
