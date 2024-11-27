@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:latest as build
 
 WORKDIR /usr/src/app
 
@@ -9,4 +9,8 @@ RUN npm install
 COPY . .
 
 EXPOSE 4000
+#CMD [ "node", "index.js" ]
+
+FROM scratch
+COPY --from=build /usr/src/app
 CMD [ "node", "index.js" ]
